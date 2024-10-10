@@ -16,14 +16,14 @@
 
     <form @submit.prevent="login">
       <InputGroup
+        data-cy="email-input"
         label="Enter your email"
         type="email"
         placeholder="Email Address"
-        iconSrc="../../assets/icons8-gmail-30.png"
         v-model="email"
       />
       <div class="text-center">
-        <Button :disabled="loading" class="w-full">{{ loading ? 'Logging in...' : 'Enter' }}</Button>
+        <Button data-cy="submit-button" :disabled="loading" class="w-full">{{ loading ? 'Logging in...' : 'Enter' }}</Button>
       </div>
 
       <!-- Social Logins -->

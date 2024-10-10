@@ -1,7 +1,5 @@
-// Import the Button component
 import Button from '../components/atoms/Button.vue';
 
-// Define the default export object separately from the function
 const buttonStory = {
   title: 'Atoms/Button',
   component: Button,
@@ -11,7 +9,6 @@ const buttonStory = {
   },
 };
 
-// Define the template function separately
 function Template(args) {
   return {
     components: { Button },
@@ -22,7 +19,6 @@ function Template(args) {
   };
 }
 
-// Define individual stories using the Template function
 export const Default = Template.bind({});
 Default.args = {
   color: 'bg-black text-white',

@@ -1,19 +1,7 @@
 <template>
   <div class="mb-4 relative">
-    <!-- Label -->
     <Label>{{ label }}</Label>
-
-    <!-- Wrapper for input and icon -->
     <div class="flex items-center border border-gray-300 rounded w-full p-2">
-      <!-- Icon (image) with specified path -->
-      <img
-        v-if="iconSrc"
-        :src="iconSrc"
-        alt="icon"
-        class="w-6 h-6 mr-2"
-      />
-
-      <!-- Input field -->
       <Input :type="type" :placeholder="placeholder" v-model="inputValue" class="flex-grow"/>
     </div>
   </div>
