@@ -1,16 +1,16 @@
 <template>
-  <AuthTemplate>
+  <!-- <AuthTemplate> -->
     <LoginForm />
-  </AuthTemplate>
+  <!-- </AuthTemplate> -->
 </template>
 
 <script>
-import AuthTemplate from '~/components/templates/AuthTemplate.vue';
+// import AuthTemplate from '~/components/templates/AuthTemplate.vue';
 import LoginForm from '~/components/organisms/LoginForm.vue';
 
 export default {
   components: {
-    AuthTemplate,
+    // AuthTemplate,
     LoginForm,
   },
 };

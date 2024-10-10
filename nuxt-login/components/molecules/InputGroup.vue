@@ -1,9 +1,6 @@
 <template>
   <div class="mb-4 relative">
-    <Label>{{ label }}</Label>
-    <div class="flex items-center border border-gray-300 rounded w-full p-2">
-      <Input :type="type" :placeholder="placeholder" v-model="inputValue" class="flex-grow"/>
-    </div>
+    <Input :type="type" :placeholder="placeholder" v-model="inputValue" class="flex-grow"/>
   </div>
 </template>
 

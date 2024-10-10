@@ -1,15 +1,12 @@
 import { defineConfig } from "cypress";
+import {installPlugin} from "@chromatic-com/cypress"
 
 export default defineConfig({
   e2e: {
-    // `chromeWebSecurity` should be placed here
     chromeWebSecurity: false,
-
-    // The setupNodeEvents function remains the same
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      installPlugin(on,config)
     },
-
-    experimentalStudio: true,
+    experimentalStudio: true
   },
 });
