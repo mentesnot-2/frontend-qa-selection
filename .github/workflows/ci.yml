@@ -30,7 +30,18 @@ jobs:
         run: |
           cd nuxt-login
           npm run build
-          
+
+      - name: Start Nuxt.js in development mode
+        run: |
+          cd nuxt-login
+          npm run dev &
+        # Start the server in the background
+
+      - name: Wait for the server to be ready
+        run: |
+          # Wait for a few seconds to make sure the server is fully up and running
+          sleep 20
+
       - name: Install Cypress
         run: |
           cd nuxt-login
