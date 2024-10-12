@@ -36,7 +36,7 @@
       </template>
     </InputField>
 
-    <Button :disabled="loading || !acceptTerms">{{ loading ? 'Signing up...' : 'Enter' }}</Button>
+    <Button :disabled="!acceptTerms" :clickHandler="signup" class="bg-[url('assets/bg-img.jpg')]">{{ loading ? 'Signing up...' : 'Enter' }}</Button>
   </form>
 </template>
 
@@ -64,10 +64,7 @@ export default {
   },
   methods: {
     async signup() {
-      this.loading = true;
-      // Simulate an API call with a timeout
       setTimeout(() => {
-        this.loading = false;
         this.$router.push('/VerificationPage');
       }, 1000);
     },

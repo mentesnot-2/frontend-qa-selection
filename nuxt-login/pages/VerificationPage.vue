@@ -1,16 +1,13 @@
 <template>
-    <div>
-      <VerificationModal />
-    </div>
-  </template>
-  
-  <script>
-  import VerificationModal from '@/components/organisms/VerificationForm.vue';
-  
-  export default {
-    components: {
-      VerificationModal,
-    },
-  };
-  </script>
-  
+  <ModalTemplate>
+    <VerificationForm />
+  </ModalTemplate>
+</template>
+
+<script setup>
+import ModalTemplate from '~/components/templates/ModalTemplate.vue';
+import VerificationForm from '~/components/organisms/VerificationForm.vue';
+</script>
+
+<style scoped>
+</style>

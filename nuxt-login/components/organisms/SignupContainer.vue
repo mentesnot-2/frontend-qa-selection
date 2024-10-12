@@ -16,11 +16,9 @@
         Back to Log in
         </div>
         
-        <!-- Profile Image and Greeting Section -->
         <div class="flex flex-col items-center justify-center">
           
-          <!-- Arrange Profile Image and Text in a Row -->
-          <div class="flex items-center gap-8 mb-4 w-full pl-4">
+          <div class="flex items-center gap-8 mb-4 w-full pl-4 ">
             <ProfileImageUploader />
             <div class="flex flex-col text-left w-2/5 flex-end">
                 <div class="text-base text-white mb-1">Nice to meet you!</div>
@@ -29,19 +27,8 @@
                 </div>
             </div>
           </div>
-          
-          <!-- Terms & Conditions -->
-          <div class="mb-4 flex items-center gap-2 w-full px-6">
-            <Checkbox :checked="acceptTerms" @toggle="toggleTerms" />
-            <div class="text-xs text-white/70">
-              I accept <span class="underline text-white">Terms & Conditions</span> and <span class="underline text-white">Privacy Policy</span>
-            </div>
-          </div>
-          
-          <!-- Signup Form -->
+          <TermsAndConditions :acceptTerms="acceptTerms" @toggle="toggleTerms" />
           <SignupForm :loading="loading" :acceptTerms="acceptTerms" />
-          
-          <!-- Terms & Conditions Link -->
           <div class="cursor-pointer text-center text-white/40 mt-4"> Terms & Conditions </div>
         </div>
       </div>
@@ -52,12 +39,14 @@
   import ProfileImageUploader from '@/components/molecules/ProfileImageUploader.vue';
   import SignupForm from '@/components/molecules/SignupForm.vue';
   import Checkbox from '@/components/atoms/Checkbox.vue';
+  import TermsAndConditions from '@/components/molecules/TermsAndConditions.vue';
   
   export default {
     components: {
       ProfileImageUploader,
       SignupForm,
       Checkbox,
+      TermsAndConditions,
     },
     data() {
       return {

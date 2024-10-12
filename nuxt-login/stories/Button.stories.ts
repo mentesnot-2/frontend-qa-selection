@@ -17,7 +17,7 @@ function Template(args) {
       return { args };
     },
     template: `
-      <Button v-bind="args" class="inline-flex items-center justify-center w-auto px-4 py-2">
+      <Button v-bind="args" class="inline-flex items-center justify-center w-26 px-4 py-2">
         <span v-if="args.icon" class="mr-2" v-html="args.icon"></span>
         {{ args.default }}
       </Button>
