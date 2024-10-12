@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@chromatic-com/cypress": "^0.8.0",
+    "@chromatic-com/storybook": "^2.0.2",
     "@nuxtjs/storybook": "7.0.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@storybook-vue/nuxt": "0.2.6",
