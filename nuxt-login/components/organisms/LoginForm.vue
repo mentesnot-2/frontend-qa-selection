@@ -31,7 +31,7 @@
           <div class="mb-6 text-center">Enter your email</div>
           <!-- Email Input Group -->
           <div class="mb-6 flex flex-col items-center">
-            <div class="group relative mb-6 flex h-10 w-full rounded bg-white">
+            <div class="group relative flex h-10 w-full rounded bg-white">
               <div class="flex w-10 items-center justify-center text-xl">
                 <i class="fa-solid fa-envelope text-base text-black/70"></i>
               </div>

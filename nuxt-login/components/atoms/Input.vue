@@ -1,11 +1,17 @@
 <template>
-    <input
-      :type="type"
-      :placeholder="placeholder"
-      :value="value"
-      @input="$emit('input', $event.target.value)"
-      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-    />
+    <div class="group relative mb-4 flex h-10 w-[20rem] rounded bg-white">
+      <div class="flex items-center justify-center text-xl mx-6">
+        <slot name="icon"></slot>
+      </div>
+      <input
+        :type="type"
+        :maxlength="maxlength"
+        :value="modelValue"
+        :placeholder="placeholder"
+        class="h-full flex-1 rounded bg-transparent text-sm text-black outline-none w-full"
+      />
+      <slot name="toggle-icon"></slot>
+    </div>
   </template>
   
   <script>
@@ -15,18 +21,14 @@
         type: String,
         default: 'text',
       },
-      placeholder: {
-        type: String,
-        default: '',
+      maxlength: {
+        type: Number,
+        default: 100,
       },
-      value: {
-        type: String,
-        default: '',
-      },
+      modelValue: String,
+      placeholder: String,
     },
+    emits: ['update:modelValue'],
   };
   </script>
-  
-  <style scoped>
-  </style>
   
