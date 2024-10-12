@@ -39,7 +39,6 @@ jobs:
 
       - name: Wait for the server to be ready
         run: |
-          # Wait for a few seconds to make sure the server is fully up and running
           sleep 20
 
       - name: Install Cypress
@@ -51,3 +50,13 @@ jobs:
         run: |
           cd nuxt-login
           ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npm run cypress:run
+
+      - name: Run Storybook build
+        run: |
+          cd nuxt-login
+          npm run build-storybook
+
+      - name: Publish Storybook to Chromatic
+        run: |
+          cd nuxt-login
+          npx chromatic --project-token=chpt_1530dbd218641dc
