@@ -30,12 +30,7 @@ jobs:
         run: |
           cd nuxt-login
           npm run build
-
-      - name: Run Storybook
-        run: |
-          cd nuxt-login
-          npm run storybook
-
+          
       - name: Install Cypress
         run: |
           cd nuxt-login
