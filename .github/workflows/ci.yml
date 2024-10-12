@@ -1,0 +1,47 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - mentesnot-sibatu
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install dependencies
+        run: |
+          cd frontend-qa-selection/nuxt-login
+          npm install
+
+      - name: Build application
+        run: |
+          cd frontend-qa-selection/nuxt-login
+          npm run build
+
+      - name: Run Storybook
+        run: |
+          cd frontend-qa-selection/nuxt-login
+          npm run storybook
+
+      - name: Install Cypress
+        run: |
+          cd frontend-qa-selection/nuxt-login
+          npm install cypress
+
+      - name: Run Cypress tests
+        run: |
+          cd frontend-qa-selection/nuxt-login
+          npm run cypress:run

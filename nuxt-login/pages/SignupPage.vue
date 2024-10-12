@@ -1,9 +1,11 @@
 <template>
-  <SignupForm />
+  <div class="fixed bottom-0 left-0 right-0 top-0 z-[90] flex h-full w-full items-center justify-center bg-black text-white backdrop-blur">
+    <SignupForm />
+  </div>
 </template>
 
 <script>
-import SignupForm from '~/components/organisms/SignupForm.vue';
+import SignupForm from '~/components/organisms/SignupContainer.vue';
 
 export default {
   components: {
@@ -11,7 +13,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Add any page-specific styles here */
-</style>

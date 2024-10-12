@@ -82,12 +82,10 @@
 </template>
 
 <script>
-import InputGroup from '~/components/molecules/InputGroup.vue';
 import Button from '~/components/atoms/Button.vue';
 
 export default {
   components: {
-    InputGroup,
     Button,
   },
   data() {
@@ -122,7 +120,8 @@ export default {
     },
     goToSignup() {
       // Redirect to the signup page when "Enter" is clicked
-      this.$router.push('/SignupPage');
+      this.$router.push({path:'/SignupPage',query: { email: this.email }});
+      
     },
     googleLogin() {
       // Handle Google login
