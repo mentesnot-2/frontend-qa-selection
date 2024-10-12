@@ -51,11 +51,6 @@ jobs:
           cd nuxt-login
           ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npm run cypress:run
 
-      - name: Run Storybook build
-        run: |
-          cd nuxt-login
-          npm run build-storybook
-
       - name: Publish Storybook to Chromatic
         run: |
           cd nuxt-login
