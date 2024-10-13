@@ -45,20 +45,10 @@ jobs:
         run: |
           sleep 20
 
-      - name: Install Cypress
-        run: |
-          cd nuxt-login
-          pnpm install cypress
-
       - name: Run Cypress tests
         run: |
           cd nuxt-login
           ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npm run cypress:run
-
-      - name: Install Storybook dependencies
-        run: |
-          cd nuxt-login
-          pnpm install --save-dev @nuxtjs/storybook
 
       - name: Run Storybook build
         run: |
