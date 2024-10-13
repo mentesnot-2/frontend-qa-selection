@@ -43,6 +43,7 @@
           <Button 
             :clickHandler="handleSubmit" 
             class="bg-[url('assets/bg-img.jpg')]"
+            data-cy="submit-btn"
           >
             Enter
           </Button>
@@ -57,13 +58,13 @@
 
           <div class="mb-8 flex w-full flex-col gap-4">
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="googleLogin">
-              <img src="../../assets/icons8-google-48.png" class="inline w-5 h-5 mr-2" alt="Google" /> Continue with Google
+              <img src="../../assets/icons8-google-48.png" class="inline w-5 h-5 mr-2" alt="Google" data-cy="google-login"/> Continue with Google
             </Button>
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="facebookLogin">
-              <img src="../../assets/icons8-facebook-48.png" class="inline w-5 h-5 mr-2" alt="Facebook" /> Continue with Facebook
+              <img src="../../assets/icons8-facebook-48.png" class="inline w-5 h-5 mr-2" alt="Facebook" data-cy="facebook-login"]/> Continue with Facebook
             </Button>
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="appleLogin">
-              <img src="../../assets/apple-icon.png" class="inline w-5 h-5 mr-2" alt="Apple" /> Continue with Apple
+              <img src="../../assets/apple-icon.png" class="inline w-5 h-5 mr-2" alt="Apple" data-cy="apple-login"]/> Continue with Apple
             </Button>
           </div>
         </div>

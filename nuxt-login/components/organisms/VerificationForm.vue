@@ -23,7 +23,7 @@ import LogoAndMessage from '~/components/molecules/LogoAndMessage.vue';
 import CodeInput from '~/components/molecules/VerificationInput.vue';
 import Button from '~/components/atoms/Button.vue';
 const goToDashboard = () => {
-  this.$router.push('/VerificationPage');
+  this.$router.push('/dashboard');
 };
 </script>
 
