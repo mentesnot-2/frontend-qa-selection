@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev --port 6006",
     "cypress:run": "cypress run",
-    "build-storybook": "build-storybook -o storybook-static",
+    "build-storybook": "storybook build -o storybook-static",
     "chromatic": "npx chromatic --project-token=chpt_1530dbd218641dc"
   },
   "dependencies": {

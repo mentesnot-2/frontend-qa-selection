@@ -4,3 +4,10 @@ describe('Login Page', () => {
   });
   
 });
+
+/* ==== Test Created with Cypress Studio ==== */
+it('Login page', function() {
+  /* ==== Generated with Cypress Studio ==== */
+  cy.visit('http://localhost:3000/');
+  /* ==== End Cypress Studio ==== */
+});

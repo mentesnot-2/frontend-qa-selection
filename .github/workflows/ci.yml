@@ -37,6 +37,7 @@ jobs:
         run: |
           cd nuxt-login
           npm run dev &
+        # Start the server in the background
 
       - name: Wait for the server to be ready
         run: |
@@ -51,6 +52,16 @@ jobs:
         run: |
           cd nuxt-login
           ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npm run cypress:run
+
+      - name: Install Storybook dependencies
+        run: |
+          cd nuxt-login
+          npm install --save-dev @nuxtjs/storybook
+
+      - name: Run Storybook build
+        run: |
+          cd nuxt-login
+          npm run build-storybook
 
       - name: Publish Storybook to Chromatic
         run: |

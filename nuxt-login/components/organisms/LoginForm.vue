@@ -82,8 +82,6 @@ export default {
   data() {
     return {
       email: '',
-      password: '',
-      loading: false,
       emailError: '', 
     };
   },
