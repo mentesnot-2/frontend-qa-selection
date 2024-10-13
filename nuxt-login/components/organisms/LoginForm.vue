@@ -109,13 +109,13 @@ export default {
       
     },
     googleLogin() {
-      // Handle Google login
+      this.$router.push("/dashboard")
     },
     facebookLogin() {
-      // Handle Facebook login
+      this.$router.push("/dashboard")
     },
     appleLogin() {
-      // Handle Apple login
+      this.$router.push("/dashboard")
     },
   },
 };

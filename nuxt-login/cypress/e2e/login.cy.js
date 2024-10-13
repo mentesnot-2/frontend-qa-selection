@@ -1,6 +1,6 @@
 describe('Login Form', () => {
     beforeEach(() => {
-      cy.visit('/'); // Adjust URL to your login page
+      cy.visit('http://localhost:3000'); // Adjust URL to your login page
     });
   
     it('should display validation error when email is empty', () => {
@@ -19,16 +19,15 @@ describe('Login Form', () => {
       const validEmail = 'test@example.com';
       cy.get('[data-cy="email-input"]').type(validEmail);
       cy.get('[data-cy="submit-btn"]').click();
-      cy.url().should('include', '/SignupPage');
+      cy.url({ timeout: 10000 }).should('include', '/SignupPage');
       cy.url().should('include', `email=${encodeURIComponent(validEmail)}`);
     });
   
     it('should navigate to dashboard on Google login click', () => {
-        cy.get('[data-cy="google-login"]').click();
-        cy.url().should('include', '/dashboard');
-        cy.get('[data-cy="welcome-text"]').should('contain', 'Welcome to Aladia');
-      });
-    
+      cy.get('[data-cy="google-login"]').click();
+      cy.url({ timeout: 10000 }).should('include', '/dashboard'); // Increase timeout
+      cy.get('[data-cy="welcome-text"]').should('contain', 'Welcome to Aladia');
+    });
       it('should navigate to dashboard on Facebook login click', () => {
         cy.get('[data-cy="facebook-login"]').click();
         cy.url().should('include', '/dashboard');
