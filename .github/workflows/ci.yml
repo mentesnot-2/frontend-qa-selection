@@ -16,7 +16,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: ${{ github.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -26,17 +26,18 @@ jobs:
       - name: Install dependencies
         run: |
           cd nuxt-login
-          npm install
+          npm install -g pnpm
+          pnpm install
 
       - name: Build application
         run: |
           cd nuxt-login
-          npm run build
+          pnpm run build
 
       - name: Start Nuxt.js in development mode
         run: |
           cd nuxt-login
-          npm run dev &
+          pnpm run dev &
         # Start the server in the background
 
       - name: Wait for the server to be ready
@@ -46,7 +47,7 @@ jobs:
       - name: Install Cypress
         run: |
           cd nuxt-login
-          npm install cypress
+          pnpm install cypress
 
       - name: Run Cypress tests
         run: |
@@ -56,12 +57,12 @@ jobs:
       - name: Install Storybook dependencies
         run: |
           cd nuxt-login
-          npm install --save-dev @nuxtjs/storybook
+          pnpm install --save-dev @nuxtjs/storybook
 
       - name: Run Storybook build
         run: |
           cd nuxt-login
-          npm run build-storybook
+          pnpm run build-storybook
 
       - name: Publish Storybook to Chromatic
         run: |
