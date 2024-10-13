@@ -1,13 +1,14 @@
 describe('Login Form', () => {
     beforeEach(() => {
       cy.visit('http://localhost:3000'); // Adjust URL to your login page
+      cy.wait(1000);
     });
-  
-    // it('should display validation error when email is empty', () => {
-    //   cy.get('[data-test="email-input"]').clear();
-    //   cy.get('[data-test="submit-btn"]').click();
-    //   cy.get('[data-test="error-email"]').should('contain.text', 'Email cannot be empty');
-    // });
+     
+    it('should display validation error when email is empty', () => {
+      cy.get('[data-test="email-input"]').clear();
+      cy.get('[data-test="submit-btn"]').click();
+      cy.get('[data-test="error-email"]').should('contain.text', 'Email cannot be empty');
+    });
   
     it('should display validation error when email is invalid', () => {
       cy.get('[data-test="email-input"]').type('invalid-email');
