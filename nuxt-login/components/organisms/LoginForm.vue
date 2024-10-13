@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        <form @submit.prevent="handleSubmit">
+        <div>
           <div class="mb-6 text-center">Enter your email</div>
           <div class="mb-6 flex flex-col items-center">
             <div class="group relative flex h-10 w-full rounded bg-white">
@@ -35,19 +35,19 @@
                 class="h-full flex-1 rounded bg-transparent text-sm text-black outline-none transition-all"
                 type="email"
                 placeholder="Email Address"
-                data-cy="email-input"
+                data-test="email-input"
               />
             </div>
-            <p v-if="emailError" class="text-red-500 text-sm text-center" data-cy="error-email">{{ emailError }}</p>
+            <p v-if="emailError" class="text-red-500 text-sm text-center" data-test="error-email">{{ emailError }}</p>
           </div>
           <Button 
             :clickHandler="handleSubmit" 
             class="bg-[url('assets/bg-img.jpg')]"
-            data-cy="submit-btn"
+            data-test="submit-btn"
           >
             Enter
           </Button>
-        </form>
+        </div>
 
         <div class="w-full">
           <div class="mb-6 flex items-center justify-between gap-4 mt-6">
@@ -58,13 +58,13 @@
 
           <div class="mb-8 flex w-full flex-col gap-4">
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="googleLogin">
-              <img src="../../assets/icons8-google-48.png" class="inline w-5 h-5 mr-2" alt="Google" data-cy="google-login"/> Continue with Google
+              <img src="../../assets/icons8-google-48.png" class="inline w-5 h-5 mr-2" alt="Google" data-test="google-login"/> Continue with Google
             </Button>
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="facebookLogin">
-              <img src="../../assets/icons8-facebook-48.png" class="inline w-5 h-5 mr-2" alt="Facebook" data-cy="facebook-login"]/> Continue with Facebook
+              <img src="../../assets/icons8-facebook-48.png" class="inline w-5 h-5 mr-2" alt="Facebook" data-test="facebook-login"]/> Continue with Facebook
             </Button>
             <Button class="flex items-center justify-center gap-4 rounded border border-white/20 py-1.5 transition-all hover:bg-white/20" :clickHandler="appleLogin">
-              <img src="../../assets/apple-icon.png" class="inline w-5 h-5 mr-2" alt="Apple" data-cy="apple-login"]/> Continue with Apple
+              <img src="../../assets/apple-icon.png" class="inline w-5 h-5 mr-2" alt="Apple" data-test="apple-login"]/> Continue with Apple
             </Button>
           </div>
         </div>

@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="signup">
+  <div>
     <InputField v-model="name" placeholder="Name">
       <template #icon>
         <i class="fa-solid fa-user text-base text-black/70"></i>
@@ -37,7 +37,7 @@
     </InputField>
 
     <Button :disabled="!acceptTerms" :clickHandler="signup" class="bg-[url('assets/bg-img.jpg')]">{{ loading ? 'Signing up...' : 'Enter' }}</Button>
-  </form>
+  </div>
 </template>
 
 <script>
