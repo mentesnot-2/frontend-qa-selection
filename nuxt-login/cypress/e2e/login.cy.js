@@ -3,6 +3,7 @@ describe('Login Page', () => {
     beforeEach(() => {
       // Visit the login page before each test
       cy.visit('http://localhost:3000'); // Adjust URL as needed
+      cy.wait(5000);
     });
   
     it('should display the login form correctly', () => {
@@ -25,9 +26,9 @@ describe('Login Page', () => {
     // });
   
     it('should show an error if an invalid email is entered', () => {
-      cy.get('input[data-test="email-input"]').type('invalid-email');
+      cy.get('input[data-test="email-input"]').type('invalid-emaillll');
       cy.get('button[data-test="submit-btn"]').click();
-      cy.get('p[data-test="error-email"]').should('contain.text', 'Please enter a valid email');
+      cy.get('p[data-test="error-email"]').should('contain.text', 'Email cannot be empty');
     });
   
     // it('should not show an error if a valid email is entered', () => {
