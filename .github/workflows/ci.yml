@@ -58,4 +58,4 @@ jobs:
       - name: Publish Storybook to Chromatic
         run: |
           cd nuxt-login
-          pnpm chromatic --project-token=chpt_1530dbd218641dc --auto-accept-changes
+          pnpm chromatic --cypress --project-token=chpt_84b048c49cf5df3 --auto-accept-changes
