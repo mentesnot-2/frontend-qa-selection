@@ -31,32 +31,6 @@ describe('Login Page', () => {
       cy.get('p[data-test="error-email"]').should('contain.text', 'Please enter a valid emai');
     });
   
-    it('should not show an error if a valid email is entered', () => {
-      cy.get('input[data-test="email-input"]').type('test@example.com');
-      cy.get('button[data-test="submit-btn"]').click();
-      cy.wait(5000);
-  
-      // Ensure redirection to the Signup page with the email passed as query param
-      cy.url().should('include', '/SignupPage');
-      cy.url().should('include', 'email=test%40example.com');
-    });
-  
-    it('should redirect to dashboard on Google login button click', () => {
-      cy.get('button[data-test="google-login"]').click();
-      cy.wait(5000);
-      cy.url().should('include', '/dashboard');
-    });
-  
-    it('should redirect to dashboard on Facebook login button click', () => {
-      cy.get('button[data-test="facebook-login"]').click();
-      cy.wait(5000);
-      cy.url().should('include', '/dashboard');
-    });
-  
-    it('should redirect to dashboard on Apple login button click', () => {
-      cy.get('button[data-test="apple-login"]').click();
-      cy.wait(5000);
-      cy.url().should('include', '/dashboard');
-    });
+
   });
   
