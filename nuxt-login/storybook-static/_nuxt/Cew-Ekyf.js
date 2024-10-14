@@ -1,6 +1,0 @@
-import{B as e}from"./CpjBa0M5.js";import"./CxgKJKif.js";import"./DlAUqK2U.js";const b={title:"Atoms/Button",component:e,argTypes:{color:{control:"text"},disabled:{control:"boolean"},icon:{control:"text"}}};function t(a){return{components:{Button:e},setup(){return{args:a}},template:`
-      <Button v-bind="args" class="inline-flex items-center justify-center w-26 px-4 py-2">
-        <span v-if="args.icon" class="mr-2" v-html="args.icon"></span>
-        {{ args.default }}
-      </Button>
-    `}}const o=t.bind({});o.args={color:"bg-black text-white",disabled:!1,default:"Continue With Google",icon:'<i class="fa-brands fa-google text-base"></i>'};const n=t.bind({});n.args={color:"bg-black text-white",disabled:!1,default:"Continue With Facebook",icon:'<i class="fa-brands fa-facebook-f text-base"></i>'};const s=t.bind({});s.args={color:"bg-black text-white",disabled:!1,default:"Continue With Apple",icon:'<i class="fa-brands fa-apple text-base"></i>'};const l=t.bind({});l.args={color:"bg-gray-900 text-white",disabled:!1,default:"Enter",icon:'<i class="fa-solid fa-key text-base text-black/70"></i>'};const d=["Default","Facebook","Apple","Enter"];export{s as Apple,o as Default,l as Enter,n as Facebook,d as __namedExportsOrder,b as default};

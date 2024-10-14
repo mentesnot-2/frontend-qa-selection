@@ -1,48 +1,58 @@
-describe('Login Form', () => {
+describe('Login Page', () => {
+
     beforeEach(() => {
-      cy.visit('http://localhost:3000'); // Adjust URL to your login page
-      cy.wait(1000);
-    });
-     
-    it('should display validation error when email is empty', () => {
-      cy.get('[data-test="email-input"]').clear();
-      cy.get('[data-test="submit-btn"]').click();
-      cy.get('[data-test="error-email"]').should('contain.text', 'Email cannot be empty');
+      // Visit the login page before each test
+      cy.visit('http://localhost:3000'); // Adjust URL as needed
     });
   
-    it('should display validation error when email is invalid', () => {
-      cy.get('[data-test="email-input"]').type('invalid-email');
-      cy.get('[data-test="submit-btn"]').click();
-      cy.get('[data-test="error-email"]').should('contain.text', 'Please enter a valid email');
-    });
-    
-    // it('should redirect to signup page on valid email submission', () => {
-    //   const validEmail = 'test@example.com';
-    //   cy.get('[data-test="email-input"]').type(validEmail);
-    //   cy.get('[data-test="submit-btn"]').click();
-    //   cy.wait(3000);
-    //   cy.url().should('include', '/SignupPage')
-    //   cy.url().should('include', `email=${encodeURIComponent(validEmail)}`);
-    // });
+    it('should display the login form correctly', () => {
+      // Check if the logo is present
+      cy.get('img[alt="Aladia Logo"]').should('be.visible');
   
-    // it('should navigate to dashboard on Google login click', () => {
-    //   cy.get('[data-test="google-login"]').click();
-    //   cy.wait(3000);
-    //   cy.url({ timeout: 10000 }).should('include', '/dashboard'); // Increase timeout
-    //   cy.get('[data-test="welcome-text"]').should('contain', 'Welcome to Aladia');
-    // });
-    //   it('should navigate to dashboard on Facebook login click', () => {
-    //     cy.get('[data-test="facebook-login"]').click();
-    //     cy.wait(3000);
-    //     cy.url().should('include', '/dashboard');
-    //     cy.get('[data-test="welcome-text"]').should('contain', 'Welcome to Aladia');
-    //   });
-    
-    //   it('should navigate to dashboard on Apple login click', () => {
-    //     cy.get('[data-test="apple-login"]').click();
-    //     cy.wait(3000);
-    //     cy.url().should('include', '/dashboard');
-    //     cy.get('[data-test="welcome-text"]').should('contain', 'Welcome to Aladia');
-    //   });
+      // Check if the email input and submit button are visible
+      cy.get('input[data-test="email-input"]').should('be.visible');
+      cy.get('button[data-test="submit-btn"]').should('be.visible');
+  
+      // Check if the third-party login buttons are visible
+      cy.get('img[alt="Google"]').should('be.visible');
+      cy.get('img[alt="Facebook"]').should('be.visible');
+      cy.get('img[alt="Apple"]').should('be.visible');
+    });
+  
+    it('should show an error if the email field is empty and submit button is clicked', () => {
+      cy.get('button[data-test="submit-btn"]').click();
+      cy.get('p[data-test="error-email"]').should('contain.text', 'Email cannot be empty');
+    });
+  
+    it('should show an error if an invalid email is entered', () => {
+      cy.get('input[data-test="email-input"]').type('invalid-email');
+      cy.get('button[data-test="submit-btn"]').click();
+      cy.get('p[data-test="error-email"]').should('contain.text', 'Please enter a valid email');
+    });
+  
+    it('should not show an error if a valid email is entered', () => {
+      cy.get('input[data-test="email-input"]').type('test@example.com');
+      cy.get('button[data-test="submit-btn"]').click();
+      cy.get('p[data-test="error-email"]').should('not.exist');
+  
+      // Ensure redirection to the Signup page with the email passed as query param
+      cy.url().should('include', '/SignupPage');
+      cy.url().should('include', 'email=test%40example.com');
+    });
+  
+    it('should redirect to dashboard on Google login button click', () => {
+      cy.get('button[data-test="google-login"]').click();
+      cy.url().should('include', '/dashboard');
+    });
+  
+    it('should redirect to dashboard on Facebook login button click', () => {
+      cy.get('button[data-test="facebook-login"]').click();
+      cy.url().should('include', '/dashboard');
+    });
+  
+    it('should redirect to dashboard on Apple login button click', () => {
+      cy.get('button[data-test="apple-login"]').click();
+      cy.url().should('include', '/dashboard');
+    });
   });
   
