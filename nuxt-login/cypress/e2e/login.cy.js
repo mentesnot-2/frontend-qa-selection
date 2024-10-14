@@ -26,7 +26,7 @@ describe('Login Page', () => {
     });
   
     it('should show an error if an invalid email is entered', () => {
-      cy.get('input[data-test="email-input"]').type('invalid-emaillll');
+      cy.get('input[data-test="email-input"]').type('invalid-emailllllll');
       cy.get('button[data-test="submit-btn"]').click();
       cy.get('p[data-test="error-email"]').should('contain.text', 'Please enter a valid emai');
     });
